@@ -2,10 +2,30 @@
 import "bootstrap";
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
 window.onload = function() {
   //write your code here
-  console.log("Hello Rigo from the console!");
+  let suit = ["♦", "♥", "♠", "♣"];
+  let value = [
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "J",
+    "Q",
+    "K",
+    "A"
+  ];
+  let randomSuit = getRandomElement(suit);
+  let randomValue = getRandomElement(value);
+
+  console.log(randomSuit, randomValue, randomSuit);
+
+  function getRandomElement(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
 };
