@@ -7,3 +7,9 @@ body {
   width: 400px;
   height: 650px;
 }
+h1 {
+  font-size: 800%;
+}
+.lowerSuit {
+  transform: rotatex(180deg);
+}

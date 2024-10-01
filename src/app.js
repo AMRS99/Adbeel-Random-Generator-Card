@@ -29,12 +29,18 @@ window.onload = function() {
   for (let index = 0; index < showSuit.length; index++) {
     showSuit[index].innerHTML = randomSuit;
     if (randomSuit === "♦" || randomSuit === "♥") {
-      showSuit[index]. = "red";
+      showSuit[index].style.color = "red";
     }
   }
-  console.log(randomSuit, randomValue, randomSuit);
-
   function getRandomElement(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
   }
 };
+
+let myButton = document.querySelector(".btn");
+myButton.addEventListener("click", _ => {
+  location.reload();
+});
+
+let inputWidth = document.querySelector(".width");
+let inputHeight = document.querySelector(".height");

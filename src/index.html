@@ -7,10 +7,10 @@
     <title>Random Card</title>
   </head>
   <body>
-    <div class="container">
-      <div class="card m-auto mt-5">
+    <div class="container d-flex">
+      <div class="card m-auto mt-5 shadow p-3 mb-5 bg-body rounded">
         <div class="card-header bg-white border-0">
-          <div class="upperSuit ms-3">
+          <div class="upperSuit">
             <h1 class="Suit"></h1>
           </div>
         </div>
@@ -22,10 +22,28 @@
           </div>
         </div>
         <div class="card-footer bg-white border-0">
-          <div class="lowerSuit d-flex justify-content-end me-3">
+          <div class="lowerSuit d-flex justify-content-end">
             <h1 class="Suit"></h1>
           </div>
         </div>
+      </div>
+
+      <div class="mt-5">
+        <button type="button" class="btn btn-light">Generate a new card</button>
+        <input
+          type="text"
+          class="width"
+          placeholder="Change width here"
+          aria-label="Recipient's username"
+          aria-describedby="basic-addon2"
+        />
+        <input
+          type="text"
+          class="height"
+          placeholder="Change height here"
+          aria-label="Recipient's username"
+          aria-describedby="basic-addon2"
+        />
       </div>
     </div>
   </body>
