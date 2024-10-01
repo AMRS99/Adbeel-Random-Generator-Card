@@ -22,7 +22,16 @@ window.onload = function() {
   ];
   let randomSuit = getRandomElement(suit);
   let randomValue = getRandomElement(value);
+  let showSuit = document.querySelectorAll(".Suit");
+  let showValue = document.querySelector(".number");
+  showValue.innerHTML = randomValue;
 
+  for (let index = 0; index < showSuit.length; index++) {
+    showSuit[index].innerHTML = randomSuit;
+    if (randomSuit === "♦" || randomSuit === "♥") {
+      showSuit[index]. = "red";
+    }
+  }
   console.log(randomSuit, randomValue, randomSuit);
 
   function getRandomElement(arr) {
