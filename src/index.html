@@ -8,8 +8,8 @@
   </head>
   <body>
     <div class="container d-flex">
-      <div class="card m-auto mt-5 shadow p-3 mb-5 bg-body rounded">
-        <div class="card-header bg-white border-0">
+      <div class="card m-auto mt-5 shadow p-3 mb-5 bg-body rounded-3">
+        <div class="card-header rounded-3 bg-white border-0">
           <div class="upperSuit">
             <h1 class="Suit"></h1>
           </div>
@@ -29,22 +29,73 @@
       </div>
 
       <div class="mt-5">
-        <button type="button" class="btn btn-light">Generate a new card</button>
+        <button type="button" class="btn btn-light" onclick="Refresh()">
+          Generate a new card
+        </button>
         <input
-          type="text"
+          type="number"
           class="width"
+          onkeydown="ChangeWidth()"
           placeholder="Change width here"
           aria-label="Recipient's username"
           aria-describedby="basic-addon2"
         />
         <input
-          type="text"
+          type="number"
           class="height"
+          onkeydown="ChangeHeight()"
           placeholder="Change height here"
           aria-label="Recipient's username"
           aria-describedby="basic-addon2"
         />
+        <div class="mt-5 ">
+          <button
+            type="button"
+            class="btn-Countdown btn btn-light"
+            onclick="autoRefresh()"
+          >
+            Start Countdown <span id="countdowntimer">10</span> sec
+          </button>
+        </div>
       </div>
     </div>
+
+    <script>
+      function ChangeWidth() {
+        let myCard = document.querySelector(".card");
+        let inputWidth = document.querySelector(".width");
+        inputWidth.addEventListener("keydown", e => {
+          if (e.code == "Enter") {
+            myCard.style.width = inputWidth.value + "px";
+            inputWidth.value = null;
+          }
+        });
+      }
+      function ChangeHeight() {
+        let inputHeight = document.querySelector(".height");
+        let myCard = document.querySelector(".card");
+        inputHeight.addEventListener("keydown", e => {
+          if (e.code == "Enter") {
+            myCard.style.height = inputHeight.value + "px";
+            inputHeight.value = null;
+          }
+        });
+      }
+      function autoRefresh() {
+        var timeleft = 10;
+        var downloadTimer = setInterval(function() {
+          timeleft--;
+          document.querySelector("#countdowntimer").textContent = timeleft;
+          if (timeleft <= 0) clearInterval(downloadTimer);
+        }, 1000);
+        setTimeout(function() {
+          window.location.reload();
+        }, 10000);
+      }
+
+      function Refresh() {
+        window.location.reload();
+      }
+    </script>
   </body>
 </html>

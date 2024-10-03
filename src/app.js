@@ -36,11 +36,3 @@ window.onload = function() {
     return arr[Math.floor(Math.random() * arr.length)];
   }
 };
-
-let myButton = document.querySelector(".btn");
-myButton.addEventListener("click", _ => {
-  location.reload();
-});
-
-let inputWidth = document.querySelector(".width");
-let inputHeight = document.querySelector(".height");

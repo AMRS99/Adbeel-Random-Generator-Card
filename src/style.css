@@ -13,3 +13,6 @@ h1 {
 .lowerSuit {
   transform: rotatex(180deg);
 }
+.modal {
+  visibility: hidden;
+}
